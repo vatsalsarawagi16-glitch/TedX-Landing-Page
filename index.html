@@ -69,12 +69,9 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(230, 43, 30, 0.2);
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
+            /* Set a fixed height so the layout doesn't jump before JS loads */
+            height: 450px; 
+            background-color: #111;
         }
 
         .hero-quote {
@@ -201,23 +198,19 @@
         <h1>TEDx<span>MDIGurgaon</span></h1>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="video-container">
-            <!-- YouTube Embed with start and end parameters for a 10s highlight -->
-            <iframe src="https://www.youtube.com/embed/vDZmVg7MtcY?start=14&end=24&autoplay=1&mute=1&loop=1&playlist=vDZmVg7MtcY" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div id="tedx-player"></div>
         </div>
         <div class="hero-quote">"True transformation begins the moment you challenge your deepest convictions."</div>
         <div class="hero-speaker">- Dr. Dheeraj Dogra, TEDx6.0 Metanoia</div>
     </section>
 
-    <!-- Theme Reveal -->
     <section id="theme">
         <h2>TEDx7.0: The Uncharted Grid</h2>
         <p>This year, we explore the intersections of technology, humanity, and the undiscovered frameworks that will define our future. Join us as we navigate the unknown.</p>
     </section>
 
-    <!-- Speaker Line-up -->
     <section id="speakers">
         <h2>Speaker Line-up</h2>
         <div class="speaker-grid">
@@ -240,7 +233,6 @@
         </div>
     </section>
 
-    <!-- Ticket Booking -->
     <section id="tickets">
         <h2>Reserve Your Seat</h2>
         <p style="margin-bottom: 30px; font-size: 18px;">Don't miss out on ideas worth spreading.</p>
@@ -251,5 +243,36 @@
         <p>This independent TEDx event is operated under license from TED.</p>
     </footer>
 
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('tedx-player', {
+                height: '450',
+                width: '100%',
+                videoId: 'vDZmVg7MtcY', // The TEDx Metanoia Video ID
+                playerVars: {
+                    'autoplay': 1,      // Auto-start the video
+                    'mute': 1,          // Must be muted to allow autoplay in most browsers
+                    'controls': 0,      // Hide the timeline/buttons for a cleaner UI
+                    'modestbranding': 1, // Hide the YouTube logo
+                    'start': 14,        // Start at 14 seconds
+                    'end': 24           // Stop at 24 seconds (10-second clip)
+                },
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerStateChange(event) {
+            // When the video hits the 'end' time, it triggers state 0 (ENDED)
+            // This tells it to immediately jump back to 14 seconds and play again
+            if (event.data === YT.PlayerState.ENDED) {
+                player.seekTo(14);
+                player.playVideo();
+            }
+        }
+    </script>
 </body>
 </html>
