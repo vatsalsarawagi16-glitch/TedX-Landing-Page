@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDxMDIGurgaon 7.0</title>
+    <style>
+        /* Official TEDx Color Palette & Base Styles */
+        :root {
+            --ted-red: #E62B1E;
+            --ted-black: #000000;
+            --ted-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--ted-black);
+            color: var(--ted-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: var(--ted-black);
+            border-bottom: 2px solid var(--ted-red);
+        }
+
+        nav h1 {
+            color: var(--ted-red);
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        nav h1 span {
+            color: var(--ted-white);
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(230,43,30,0.1) 100%);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 30px;
+            border: 4px solid var(--ted-red);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(230, 43, 30, 0.2);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .hero-quote {
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 300;
+            max-width: 800px;
+            margin-bottom: 15px;
+        }
+
+        .hero-speaker {
+            font-size: 18px;
+            color: var(--ted-red);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Theme Reveal Section */
+        #theme {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--ted-white);
+            color: var(--ted-black);
+        }
+
+        #theme h2 {
+            color: var(--ted-red);
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #theme p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Speaker Line-up Section */
+        #speakers {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #speakers h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .speaker-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            background-color: #1a1a1a;
+            width: 250px;
+            padding: 30px 20px;
+            border-top: 4px solid var(--ted-red);
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .speaker-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .speaker-card p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Ticket Booking Section */
+        #tickets {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: var(--ted-red);
+        }
+
+        #tickets h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--ted-red);
+            background-color: var(--ted-white);
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--ted-black);
+            color: var(--ted-white);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--ted-black);
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>TEDx<span>MDIGurgaon</span></h1>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="video-container">
+            <!-- YouTube Embed with start and end parameters for a 10s highlight -->
+            <iframe src="https://www.youtube.com/embed/vDZmVg7MtcY?start=14&end=24&autoplay=1&mute=1&loop=1&playlist=vDZmVg7MtcY" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="hero-quote">"True transformation begins the moment you challenge your deepest convictions."</div>
+        <div class="hero-speaker">- Dr. Dheeraj Dogra, TEDx6.0 Metanoia</div>
+    </section>
+
+    <!-- Theme Reveal -->
+    <section id="theme">
+        <h2>TEDx7.0: The Uncharted Grid</h2>
+        <p>This year, we explore the intersections of technology, humanity, and the undiscovered frameworks that will define our future. Join us as we navigate the unknown.</p>
+    </section>
+
+    <!-- Speaker Line-up -->
+    <section id="speakers">
+        <h2>Speaker Line-up</h2>
+        <div class="speaker-grid">
+            <div class="speaker-card">
+                <h3>Nitin Gadkari</h3>
+                <p>Visionary Leadership & Infrastructure</p>
+            </div>
+            <div class="speaker-card">
+                <h3>Ankur Warikoo</h3>
+                <p>Entrepreneurship & Mindset</p>
+            </div>
+            <div class="speaker-card">
+                <h3>Ritwik Bhowmik</h3>
+                <p>The Art of Storytelling</p>
+            </div>
+            <div class="speaker-card">
+                <h3>Terence Lewis</h3>
+                <p>Creative Expression & Movement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticket Booking -->
+    <section id="tickets">
+        <h2>Reserve Your Seat</h2>
+        <p style="margin-bottom: 30px; font-size: 18px;">Don't miss out on ideas worth spreading.</p>
+        <a href="#" class="btn">Book Tickets Now</a>
+    </section>
+
+    <footer>
+        <p>This independent TEDx event is operated under license from TED.</p>
+    </footer>
+
+</body>
+</html>
